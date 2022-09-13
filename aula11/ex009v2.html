@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>País de Origem</title>
+    <style>
+        body {
+            background: #0D0D0D;
+            color: #D95032;
+            
+        }
+
+        div#corpo {
+            width: 250px;
+            height: 250px;
+            padding: 25px 100px 0px 100px;
+            border: 8px solid #6093BF;
+            box-shadow: 1px 1px 4px #A6351C;
+            margin: auto;
+            
+        }
+
+        input {
+            font-family: sans-serif;
+            font-weight: normal;
+            font-size: 13pt;
+            background-color: rgba(255, 255, 255, .8);
+        }
+
+        input#botao {
+            border-radius: 15px 15px 15px 15px;
+            background: #7D8C45;
+            color: #026A4C;
+            margin-top: 5px;
+        }
+
+        input#botao:hover {
+            background: #510273;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="corpo">
+        <h1>Nacionalidade</h1>
+        Informe a sua nascionalidade: <input type="text" name="spais" id="spais">
+        <input id="botao" type="button" value="Verificar" onclick="pesquisar()">
+        <div id="res">
+
+        </div>
+        <script>
+            function pesquisar() {
+                var na1 = window.document.getElementById('spais')
+                var res = window.document.querySelector('div#res')
+                var naa = String(na1.value)
+                res.innerHTML = `<p>O seu país de origem é <strong>${naa}</p></strong>`
+                if (naa == 'Brasil') {
+                    res.innerHTML += `<p>Então você é <strong>Brasileiro</p></strong>`
+                } else {
+                    res.innerHTML += `<p>Então você é <strong>Estrangeiro</p></strong>`
+                }
+            }
+        </script>
+    </div>
+</body>
+</html>
